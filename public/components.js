@@ -10,6 +10,7 @@
   const NAV_LINKS = [
     { href: '/honey.html',               label: 'Local Honey' },
     { href: '/honey-stand.html',         label: 'Honey Stand' },
+    { href: '/honey-house.html',         label: 'Honey House' },
     { href: '/swarm-collection.html',    label: 'Swarm Collection' },
     { href: '/nucs-queens.html',         label: 'Nucs &amp; Queens' },
     { href: '/bee-removal.html',         label: 'Bee Removal' },
@@ -43,6 +44,7 @@
 '<div><h4>Apiary</h4>' +
 '<a href="/honey.html">Local Honey</a>' +
 '<a href="/honey-stand.html">Honey Stand</a>' +
+'<a href="/honey-house.html">Honey House (stay)</a>' +
 '<a href="/swarm-collection.html">Swarm Collection</a>' +
 '<a href="/nucs-queens.html">Nucs &amp; Queens</a>' +
 '<a href="/bee-removal.html">Bee Removal</a></div>' +
