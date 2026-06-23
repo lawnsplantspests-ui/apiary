@@ -79,6 +79,12 @@ section.tight{padding:44px 0}
 .faq summary::after{content:"+";color:var(--amber);font-weight:800}
 .faq details[open] summary::after{content:"\2013"}
 .faq p{padding:0 0 18px;color:var(--stone)}
+.band .faq{border-top-color:rgba(255,255,255,.18)}
+.band .faq details{border-bottom-color:rgba(255,255,255,.18)}
+.band .faq summary{color:#fff}
+.band .faq summary::after{color:var(--gold)}
+.band .faq p{color:#d4c8b2}
+.band .faq a{color:var(--gold)}
 
 .ctastrip{background:linear-gradient(100deg,var(--amber),var(--honey-deep));color:#fff;border-radius:22px;padding:46px 40px;text-align:center;margin:10px 0}
 .ctastrip h2{color:#fff;font-size:clamp(1.6rem,3.4vw,2.3rem)}
