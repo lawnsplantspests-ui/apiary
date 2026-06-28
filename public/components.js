@@ -68,6 +68,7 @@
 '<a href="/about.html">About the Apiary</a>' +
 '<a href="/contact.html">Contact</a>' +
 '<a href="/articles.html">Articles</a>' +
+'<a href="https://lawnsplantspests-ui.github.io/bee-sim/" target="_blank" rel="noopener">Hive Simulator &#128027;</a>' +
 '<a href="/privacy.html">Privacy</a></div>' +
 '<div><h4>Follow &amp; review</h4>' +
 '<div class="social-icons">' +
