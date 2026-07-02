@@ -76,6 +76,7 @@
 '</div>' +
 '<a href="https://g.page/r/Cdl7J32tudSyEBM/review" target="_blank" rel="noopener">Leave a Google review</a>' +
 '<a href="https://localfarmstand.org/stands/the-alleman-apiary" target="_blank" rel="noopener">Find us on Local Farm Stand</a>' +
+'<a href="https://varroavault.com/directory/the-alleman-apiary-colonial-park-pa" target="_blank" rel="noopener">Find us on VarroaVault</a>' +
 '<a href="https://lawnsplantspests.com" target="_blank" rel="noopener">Lawns Plants &amp; Pests</a></div>' +
 '</div>' +
 '<div class="fnote"><span>&copy;2026 The Alleman Apiary, Harrisburg, PA.</span><span>3502 High St., Harrisburg, PA 17109 &middot; 717-379-3248</span></div>' +
