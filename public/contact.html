@@ -35,7 +35,72 @@
 <div><h3>Follow us</h3><p><a href="https://www.facebook.com/AllemanApiary/" target="_blank" rel="noopener" style="color:var(--honey-deep);font-weight:700">Facebook</a> &middot; <a href="https://www.instagram.com/allemanapiary/" target="_blank" rel="noopener" style="color:var(--honey-deep);font-weight:700">Instagram</a></p><p style="margin-top:6px">Seasonal updates, swarm-season alerts, new product drops at the stand, and behind-the-scenes from the apiary.</p></div>
 </div></div></section>
 
-<section class="band tight"><div class="wrap"><div class="sec-head"><div class="eyebrow">Service area</div>
+<section class="band tight"><div class="wrap"><div class="sec-head"><div class="eyebrow">Send a message</div>
+<h2>Or use the form</h2>
+<p>For swarms and active bee situations, texting a photo to 717-379-3248 is fastest. For everything else &mdash; honey orders, nucs and queens, mentorship, pollination &mdash; the form works great.</p></div>
+<form class="cform" id="apiary-form" onsubmit="return submitApiaryForm(event)">
+<div class="cform-row">
+<div><label for="af-name">Your name</label><input id="af-name" name="name" type="text" required autocomplete="name"></div>
+<div><label for="af-phone">Phone</label><input id="af-phone" name="phone" type="tel" required autocomplete="tel" placeholder="717-555-0123"></div>
+</div>
+<div class="cform-row">
+<div><label for="af-email">Email</label><input id="af-email" name="email" type="email" required autocomplete="email"></div>
+<div><label for="af-topic">What's this about?</label>
+<select id="af-topic" name="topic" required>
+<option value="">&mdash; Pick one &mdash;</option>
+<option>Swarm on my property</option>
+<option>Bees in a structure (removal)</option>
+<option>Honey order or wholesale</option>
+<option>Nucs &amp; queens</option>
+<option>Beekeeping mentorship</option>
+<option>Pollination services</option>
+<option>Honey House stay</option>
+<option>Something else</option>
+</select></div>
+</div>
+<div><label for="af-message">Your message</label><textarea id="af-message" name="message" required placeholder="Where are the bees, what are you looking for, or what would you like to order?"></textarea></div>
+<input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+<button type="submit" class="btn">Send message &rarr;</button>
+<p class="cform-note">We usually reply the same day. During swarm season, text for the fastest response.</p>
+</form>
+<div class="cform-success" id="af-success" style="display:none">
+<h3 style="margin-top:0">&#10003; Message sent!</h3>
+<p style="margin-bottom:0">Thanks &mdash; we'll get back to you soon, usually the same day. Time-sensitive bee situation? Call or text <a href="tel:7173793248">717-379-3248</a>.</p>
+</div>
+<script>
+// Web3Forms access key — get a free key at https://web3forms.com (enter TheAllemanApiary@gmail.com).
+// Until a real key is pasted below, the form falls back to opening the visitor's email app.
+var WEB3FORMS_KEY = 'YOUR_ACCESS_KEY_HERE';
+function apiaryMailtoFallback(data){
+  var body = encodeURIComponent('Message from allemanapiary.com\n\nName: ' + data.get('name') + '\nPhone: ' + data.get('phone') + '\nEmail: ' + data.get('email') + '\nTopic: ' + data.get('topic') + '\n\n' + data.get('message'));
+  window.location.href = 'mailto:TheAllemanApiary@gmail.com?subject=' + encodeURIComponent('Website message — ' + data.get('topic') + ' — ' + data.get('name')) + '&body=' + body;
+}
+function submitApiaryForm(e){
+  e.preventDefault();
+  var f = e.target, data = new FormData(f);
+  if (WEB3FORMS_KEY.indexOf('YOUR_') === 0) { apiaryMailtoFallback(data); return false; }
+  var btn = f.querySelector('button[type="submit"]');
+  btn.disabled = true; btn.textContent = 'Sending…';
+  data.append('access_key', WEB3FORMS_KEY);
+  data.append('subject', 'Website message — ' + data.get('topic') + ' — ' + data.get('name'));
+  data.append('from_name', 'allemanapiary.com contact form');
+  fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
+    .then(function(r){ return r.json(); })
+    .then(function(res){
+      if (!res.success) { throw new Error('send failed'); }
+      f.style.display = 'none';
+      document.getElementById('af-success').style.display = 'block';
+    })
+    .catch(function(){
+      btn.disabled = false; btn.textContent = 'Send message →';
+      apiaryMailtoFallback(data);
+    });
+  return false;
+}
+</script>
+</div></section>
+
+<section><div class="wrap"><div class="sec-head"><div class="eyebrow">Service area</div>
 <h2>Where we respond</h2></div>
 <p>We respond to bee removal, swarm collection, and apiary services calls throughout Dauphin, Cumberland, Lebanon, and York Counties — including Harrisburg, Paxtang, Penbrook, Steelton, Highspire, Middletown, Hummelstown, Hershey, Palmyra, Annville, Cleona, Lebanon, Grantville, Linglestown, Colonial Park, Susquehanna Township, Lower Paxton, Camp Hill, Mechanicsburg, Lemoyne, New Cumberland, Wormleysburg, Enola, Marysville, Halifax, Millersburg, Elizabethtown, Mount Joy, Mount Wolf, Manchester, Dillsburg, Carlisle, Boiling Springs, and surrounding Central Pennsylvania communities. Outside this range — call anyway and we'll connect you with someone closer.</p>
 </div></section>
