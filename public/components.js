@@ -64,6 +64,7 @@
 '<div><h4>More</h4>' +
 '<a href="/apiary-services.html">Apiary Services</a>' +
 '<a href="/pollination-services.html">Pollination Services</a>' +
+'<a href="/host-our-hives.html">Host Our Hives</a>' +
 '<a href="/faq.html">FAQ</a>' +
 '<a href="/about.html">About the Apiary</a>' +
 '<a href="/contact.html">Contact</a>' +
