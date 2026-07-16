@@ -69,6 +69,7 @@
 '<a href="/about.html">About the Apiary</a>' +
 '<a href="/contact.html">Contact</a>' +
 '<a href="/articles.html">Articles</a>' +
+'<a href="https://bee-sim.allemanapiary.com" target="_blank" rel="noopener">Hive Simulator</a>' +
 '<a href="/privacy.html">Privacy</a></div>' +
 '<div><h4>Follow &amp; review</h4>' +
 '<div class="social-icons">' +
