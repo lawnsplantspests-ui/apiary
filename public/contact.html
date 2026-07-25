@@ -55,6 +55,7 @@
 <option>Beekeeping mentorship</option>
 <option>Pollination services</option>
 <option>Honey House stay</option>
+<option>Beekeeping experience</option>
 <option>Something else</option>
 </select></div>
 </div>
@@ -68,6 +69,15 @@
 <p style="margin-bottom:0">Thanks &mdash; we'll get back to you soon, usually the same day. Time-sensitive bee situation? Call or text <a href="tel:7173793248">717-379-3248</a>.</p>
 </div>
 <script>
+// Preselect the topic dropdown from ?topic= so pages can deep-link into the right inquiry.
+(function(){
+  var t = new URLSearchParams(window.location.search).get('topic');
+  if (!t) return;
+  var sel = document.getElementById('af-topic');
+  for (var i = 0; i < sel.options.length; i++) {
+    if (sel.options[i].text.toLowerCase() === t.toLowerCase()) { sel.selectedIndex = i; return; }
+  }
+})();
 // Web3Forms access key (tied to TheAllemanApiary@gmail.com — safe to be public, it's an email alias not a secret)
 var WEB3FORMS_KEY = 'a292496e-6c7d-4195-99d4-c8c14226c6c0';
 function apiaryMailtoFallback(data){
