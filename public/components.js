@@ -21,17 +21,17 @@
     '<link rel="apple-touch-icon" href="/images/alleman-apiary-logo.png">');
 
   const NAV_LINKS = [
-    { href: '/honey.html',               label: 'Local Honey' },
-    { href: '/honey-stand.html',         label: 'Honey Stand' },
-    { href: '/honey-house.html',         label: 'Honey House' },
-    { href: '/swarm-collection.html',    label: 'Swarm Collection' },
-    { href: '/nucs-queens.html',         label: 'Nucs &amp; Queens' },
-    { href: '/bee-removal.html',         label: 'Bee Removal' },
-    { href: '/apiary-services.html',     label: 'Apiary Services' },
-    { href: '/pollination-services.html',label: 'Pollination' },
-    { href: '/faq.html',                 label: 'FAQ' },
-    { href: '/about.html',               label: 'About' },
-    { href: '/contact.html',             label: 'Contact' },
+    { href: '/honey',               label: 'Local Honey' },
+    { href: '/honey-stand',         label: 'Honey Stand' },
+    { href: '/honey-house',         label: 'Honey House' },
+    { href: '/swarm-collection',    label: 'Swarm Collection' },
+    { href: '/nucs-queens',         label: 'Nucs &amp; Queens' },
+    { href: '/bee-removal',         label: 'Bee Removal' },
+    { href: '/apiary-services',     label: 'Apiary Services' },
+    { href: '/pollination-services',label: 'Pollination' },
+    { href: '/faq',                 label: 'FAQ' },
+    { href: '/about',               label: 'About' },
+    { href: '/contact',             label: 'Contact' },
   ];
 
   const currentFile = '/' + (window.location.pathname.split('/').pop() || 'index.html');
@@ -55,22 +55,22 @@
 '<p style="margin-top:14px"><b style="color:var(--gold)">Honey stand:</b><br>3502 High St., Harrisburg, PA 17109</p>' +
 '<p style="margin-top:12px"><a href="tel:7173793248" style="color:var(--gold);font-weight:700">Call or text 717-379-3248</a><br><a href="mailto:TheAllemanApiary@gmail.com" style="color:rgba(255,255,255,.8)">TheAllemanApiary@gmail.com</a></p></div>' +
 '<div><h4>Apiary</h4>' +
-'<a href="/honey.html">Local Honey</a>' +
-'<a href="/honey-stand.html">Honey Stand</a>' +
-'<a href="/honey-house.html">Honey House (stay)</a>' +
-'<a href="/swarm-collection.html">Swarm Collection</a>' +
-'<a href="/nucs-queens.html">Nucs &amp; Queens</a>' +
-'<a href="/bee-removal.html">Bee Removal</a></div>' +
+'<a href="/honey">Local Honey</a>' +
+'<a href="/honey-stand">Honey Stand</a>' +
+'<a href="/honey-house">Honey House (stay)</a>' +
+'<a href="/swarm-collection">Swarm Collection</a>' +
+'<a href="/nucs-queens">Nucs &amp; Queens</a>' +
+'<a href="/bee-removal">Bee Removal</a></div>' +
 '<div><h4>More</h4>' +
-'<a href="/apiary-services.html">Apiary Services</a>' +
-'<a href="/pollination-services.html">Pollination Services</a>' +
-'<a href="/host-our-hives.html">Host Our Hives</a>' +
-'<a href="/faq.html">FAQ</a>' +
-'<a href="/about.html">About the Apiary</a>' +
-'<a href="/contact.html">Contact</a>' +
-'<a href="/articles.html">Articles</a>' +
+'<a href="/apiary-services">Apiary Services</a>' +
+'<a href="/pollination-services">Pollination Services</a>' +
+'<a href="/host-our-hives">Host Our Hives</a>' +
+'<a href="/faq">FAQ</a>' +
+'<a href="/about">About the Apiary</a>' +
+'<a href="/contact">Contact</a>' +
+'<a href="/articles">Articles</a>' +
 '<a href="https://bee-sim.allemanapiary.com" target="_blank" rel="noopener">Hive Simulator</a>' +
-'<a href="/privacy.html">Privacy</a></div>' +
+'<a href="/privacy">Privacy</a></div>' +
 '<div><h4>Follow &amp; review</h4>' +
 '<div class="social-icons">' +
 '<a href="https://www.facebook.com/AllemanApiary/" class="social-icon social-fb" aria-label="The Alleman Apiary on Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.24.19 2.24.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.9h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94z"/></svg></a>' +
