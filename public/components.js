@@ -69,6 +69,7 @@
 '<a href="/about">About the Apiary</a>' +
 '<a href="/contact">Contact</a>' +
 '<a href="/articles">Articles</a>' +
+'<a href="https://bench.allemanapiary.com" target="_blank" rel="noopener">The Bee Bench (free tools)</a>' +
 '<a href="https://bee-sim.allemanapiary.com" target="_blank" rel="noopener">Hive Simulator</a>' +
 '<a href="/privacy">Privacy</a></div>' +
 '<div><h4>Follow &amp; review</h4>' +
