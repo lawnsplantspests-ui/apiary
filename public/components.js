@@ -65,6 +65,7 @@
 '<a href="/apiary-services">Apiary Services</a>' +
 '<a href="/pollination-services">Pollination Services</a>' +
 '<a href="/host-our-hives">Host Our Hives</a>' +
+'<a href="/apitherapy">Bees for Apitherapy</a>' +
 '<a href="/faq">FAQ</a>' +
 '<a href="/about">About the Apiary</a>' +
 '<a href="/contact">Contact</a>' +
