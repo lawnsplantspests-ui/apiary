@@ -18,6 +18,7 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(255,252,244,.93);ba
 .brand small{display:block;font-family:'Inter';font-weight:500;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-top:3px}
 .navlinks{display:flex;gap:13px;align-items:center;font-size:.85rem;font-weight:500}
 .navlinks a{color:var(--ink)}
+.navlinks a.active{color:var(--honey-deep);font-weight:700;box-shadow:inset 0 -2px 0 var(--gold)}
 .callbtn{background:var(--bark);color:#fff !important;padding:9px 14px;border-radius:999px;font-weight:700;font-size:.85rem;white-space:nowrap}
 .callbtn:hover{background:var(--honey-deep);text-decoration:none}
 .menutoggle{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:1.1rem;cursor:pointer}
@@ -69,6 +70,18 @@ section.tight{padding:44px 0}
 .checks{list-style:none;margin-top:20px;display:grid;gap:10px}
 .checks li{padding-left:30px;position:relative}
 .checks li::before{content:"";position:absolute;left:2px;top:6px;width:15px;height:17px;background:var(--gold);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+
+/* numbered process lists -- the number is in a comb cell */
+ol.steps{counter-reset:step;list-style:none;margin-top:22px;padding:0;display:grid;gap:16px}
+ol.steps li{counter-increment:step;position:relative;padding-left:46px;color:var(--stone)}
+ol.steps li::before{content:counter(step);position:absolute;left:0;top:0;width:29px;height:33px;
+  background:var(--gold);color:var(--bark);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+  display:grid;place-items:center;font-family:'Inter',system-ui,sans-serif;font-weight:700;font-size:.88rem;line-height:1}
+ol.steps li strong{color:var(--bark);font-weight:600}
+.band ol.steps li{color:#c4b89f}
+.band ol.steps li strong{color:#fff}
+.band ol.steps li::before{color:var(--bark)}
+@media(max-width:520px){ol.steps li{padding-left:40px}ol.steps li::before{width:26px;height:30px}}
 
 .split{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
 
