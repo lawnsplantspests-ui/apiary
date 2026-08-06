@@ -16,9 +16,9 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(255,252,244,.93);ba
 .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;max-width:var(--maxw);margin:0 auto;padding:12px 24px}
 .brand{font-family:'Fraunces',serif;font-weight:600;font-size:1.2rem;color:var(--bark);line-height:1}
 .brand small{display:block;font-family:'Inter';font-weight:500;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-top:3px}
-.navlinks{display:flex;gap:20px;align-items:center;font-size:.92rem;font-weight:500}
+.navlinks{display:flex;gap:13px;align-items:center;font-size:.85rem;font-weight:500}
 .navlinks a{color:var(--ink)}
-.callbtn{background:var(--bark);color:#fff !important;padding:10px 18px;border-radius:999px;font-weight:700;font-size:.9rem;white-space:nowrap}
+.callbtn{background:var(--bark);color:#fff !important;padding:9px 14px;border-radius:999px;font-weight:700;font-size:.85rem;white-space:nowrap}
 .callbtn:hover{background:var(--honey-deep);text-decoration:none}
 .menutoggle{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:1.1rem;cursor:pointer}
 
@@ -104,7 +104,7 @@ footer.site h4{color:#fff;font-size:.82rem;letter-spacing:.1em;text-transform:up
 .fgrid a.social-fb:hover{background:#1877F2;border-color:#1877F2}
 .fgrid a.social-ig:hover{background:linear-gradient(135deg,#feda75 0%,#fa7e1e 25%,#d62976 50%,#962fbf 75%,#4f5bd5 100%);border-color:transparent}
 
-@media(max-width:860px){.navlinks{display:none}.menutoggle{display:block}
+@media(max-width:1120px){.navlinks{display:none}.menutoggle{display:block}
   .navlinks.open{display:flex;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:var(--paper);padding:18px 24px;border-bottom:1px solid var(--line);gap:14px}
   .split{grid-template-columns:1fr;gap:28px}.fgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.fgrid{grid-template-columns:1fr}}
@@ -126,7 +126,7 @@ footer.site h4{color:#fff;font-size:.82rem;letter-spacing:.1em;text-transform:up
 /* mobile sticky call bar — shown only where .navlinks collapses (<=860px),
    which hides the header .callbtn behind the hamburger */
 .callbar{display:none}
-@media(max-width:860px){
+@media(max-width:1120px){
   .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;align-items:center;justify-content:center;gap:9px;
     background:var(--bark);color:#fff !important;font-family:'Inter',system-ui,sans-serif;font-size:1rem;font-weight:700;
     text-decoration:none;padding:15px 16px;padding-bottom:calc(15px + env(safe-area-inset-bottom,0px));
