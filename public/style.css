@@ -149,3 +149,13 @@ footer.site h4{color:#fff;font-size:.82rem;letter-spacing:.1em;text-transform:up
   .callbar svg{width:19px;height:19px;flex-shrink:0}
   body{padding-bottom:calc(66px + env(safe-area-inset-bottom,0px))}
 }
+/* What's free vs. paid — swarm / structural colony / yellow jackets */
+.freecheck{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:26px}
+.fc{background:var(--paper);border:1px solid var(--line);border-top:5px solid var(--line);border-radius:14px;padding:22px 22px 20px;display:flex;flex-direction:column}
+.fc.free{border-top-color:#4f8a3c}.fc.paid{border-top-color:var(--amber)}.fc.pest{border-top-color:#a33a2a}
+.fc-tag{align-self:flex-start;font-family:'Inter',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:99px;margin-bottom:12px;color:#fff}
+.fc.free .fc-tag{background:#4f8a3c}.fc.paid .fc-tag{background:var(--honey-deep)}.fc.pest .fc-tag{background:#a33a2a}
+.fc h3{font-size:1.18rem;margin-bottom:8px}
+.fc p{color:var(--stone);font-size:.95rem;flex:1}
+.fc a.more{margin-top:12px;font-weight:700;font-size:.9rem;color:var(--honey-deep)}
+.fc-note{margin-top:18px;color:var(--stone);font-size:1rem}
