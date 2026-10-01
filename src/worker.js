@@ -91,9 +91,21 @@ function trafficSource(request, selfHost) {
   return host;
 }
 
+function canonicalUrl(url) {
+  let path = url.pathname;
+  if (path.endsWith("/index.html")) path = path.slice(0, -"index.html".length);
+  else if (path.endsWith(".html") && path !== "/404.html") path = path.slice(0, -5);
+  if (url.protocol === "https:" && path === url.pathname) return null;
+  return `https://${url.host}${path}${url.search}`;
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+
+    // Permanent redirects so Google consolidates: static assets only 307 .html, and http isn't upgraded
+    const canonical = canonicalUrl(url);
+    if (canonical) return Response.redirect(canonical, 301);
 
     // One-time link Devon & Elyse open on their own devices so their
     // own visits don't ping the phone
