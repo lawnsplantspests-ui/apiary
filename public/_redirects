@@ -1,2 +1,3 @@
-# Cloudflare Workers handles bare-domain to www at the DNS / Redirect Rules
-# level when the custom domain is wired up. No app-level rules needed.
+/about-the-apiary /about 301
+/allemanapiary / 301
+/articles/varroa-mite-thresholds-pa /articles/varroa-thresholds-pa 301
