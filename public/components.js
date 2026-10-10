@@ -17,8 +17,8 @@
 
   // Add favicon globally
   document.head.insertAdjacentHTML('beforeend',
-    '<link rel="icon" type="image/png" href="/images/alleman-apiary-logo.png">' +
-    '<link rel="apple-touch-icon" href="/images/alleman-apiary-logo.png">');
+    '<link rel="icon" type="image/png" href="/images/alleman-apiary-icon.png">' +
+    '<link rel="apple-touch-icon" href="/images/alleman-apiary-icon.png">');
 
   const NAV_LINKS = [
     { href: '/honey',               label: 'Local Honey' },
