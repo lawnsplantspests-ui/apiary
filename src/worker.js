@@ -141,41 +141,9 @@ export default {
         else if (country && country !== NOTIFY_COUNTRY) reason = "overseas";
         else if (cookies.includes("apiary_owner=1")) reason = "owner";
 
-        // TEMP diagnostic (read via `wrangler tail apiary --format json`):
-        // classify every page view. No raw IP is logged.
-        const cf0 = request.cf || {};
-        console.log(
-          "VISITLOG " +
-            JSON.stringify({
-              r: reason,
-              path: url.pathname,
-              city: cf0.city || "",
-              region: cf0.regionCode || "",
-              country: cf0.country || "",
-              org: org,
-              asn: cf0.asn || "",
-              ref: request.headers.get("referer") || "",
-              ua: userAgent.slice(0, 160),
-            })
-        );
-
         if (reason === "queued") {
-          if (url.searchParams.has("pingtest")) {
-            // Test mode: send synchronously, skip dedupe, report outcome
-            reason = await notifyVisit(request, url, env, true);
-          } else {
-            ctx.waitUntil(notifyVisit(request, url, env, false));
-          }
+          ctx.waitUntil(notifyVisit(request, url, env));
         }
-
-        const tagged = new Response(response.body, response);
-        tagged.headers.set("x-visit-ping", reason);
-        // "tc" = both secrets present, "t-" token only, "-c" chat only.
-        const cfg =
-          (env && env.TELEGRAM_BOT_TOKEN ? "t" : "-") +
-          (env && env.TELEGRAM_CHAT_ID ? "c" : "-");
-        tagged.headers.set("x-tg-config", cfg);
-        return tagged;
       }
     } catch (e) {
       // Notification problems must never affect serving the site
@@ -185,9 +153,9 @@ export default {
   },
 };
 
-// Returns an outcome string (also used as the x-visit-ping header in
-// test mode): "sent" | "deduped" | "send-failed-<status>" | "error-..."
-async function notifyVisit(request, url, env, isTest) {
+// Returns an outcome string:
+// "sent" | "deduped" | "send-failed-<status>" | "error-..."
+async function notifyVisit(request, url, env) {
   // Dedupe: one notification per visitor per 30 minutes, so a person
   // browsing several pages doesn't fire a ping for every click.
   const cache = caches.default;
@@ -195,12 +163,10 @@ async function notifyVisit(request, url, env, isTest) {
   const dedupeKey = new Request(
     "https://visit-dedupe.apiary-internal.example/" + encodeURIComponent(ip)
   );
-  if (!isTest) {
-    try {
-      if (await cache.match(dedupeKey)) return "deduped";
-    } catch (e) {
-      // fall through and send
-    }
+  try {
+    if (await cache.match(dedupeKey)) return "deduped";
+  } catch (e) {
+    // fall through and send
   }
 
   try {
@@ -250,14 +216,12 @@ async function notifyVisit(request, url, env, isTest) {
 
     // Only start the 30-min quiet window after a successful send,
     // so a failed send doesn't silence the next real visit
-    if (!isTest) {
-      try {
-        await cache.put(
-          dedupeKey,
-          new Response("1", { headers: { "Cache-Control": "max-age=1800" } })
-        );
-      } catch (e) {}
-    }
+    try {
+      await cache.put(
+        dedupeKey,
+        new Response("1", { headers: { "Cache-Control": "max-age=1800" } })
+      );
+    } catch (e) {}
     return "sent";
   } catch (e) {
     const msg = e && e.message ? String(e.message) : "unknown";
