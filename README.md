@@ -30,3 +30,15 @@ clean robots.txt and sitemap by default.)
 - Swarm removal here = live honey-bee collection. Structural/in-wall removal and
   wasps/hornets cross-link to the licensed LPP site, matching your setup.
 - Relative links — double-click index.html to preview before deploying.
+
+## Menu and footer
+
+The site menu and footer are written into every page, so search engines and
+AI crawlers see the links without running JavaScript. Edit them in
+`partials/header.html` and `partials/footer.html`, then run:
+
+    python3 tools/build_chrome.py
+
+That refreshes the copy in each page (between the `site-header` / `site-footer`
+markers). `public/components.js` now only loads analytics, the favicon, and
+highlights the current page in the menu.
