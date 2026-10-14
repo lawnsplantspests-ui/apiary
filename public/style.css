@@ -171,3 +171,7 @@ footer.site h4{color:#fff;font-size:.82rem;letter-spacing:.1em;text-transform:up
 .photo-strip.single{grid-template-columns:1fr;max-width:700px;margin-left:auto;margin-right:auto}
 .photo-strip.single img{height:360px}
 @media (max-width:640px){.photo-strip.single img{height:240px}}
+
+/* Article byline under the hero intro */
+.hero p.byline{font-size:.95rem;color:var(--stone);margin:-16px 0 0}
+.hero p.byline a{color:inherit;text-decoration:underline}
