@@ -175,3 +175,13 @@ footer.site h4{color:#fff;font-size:.82rem;letter-spacing:.1em;text-transform:up
 /* Article byline under the hero intro */
 .hero p.byline{font-size:.95rem;color:var(--stone);margin:-16px 0 0}
 .hero p.byline a{color:inherit;text-decoration:underline}
+.cform fieldset{border:0;padding:0;margin:0;min-width:0}
+.cform legend{font-weight:600;font-size:.9rem;margin-bottom:8px;color:var(--bark);padding:0}
+.cform .opt{font-weight:400;color:var(--stone);font-size:.85rem}
+.cform .opts{display:grid;gap:8px}
+.cform .opts-inline{display:flex;flex-wrap:wrap;gap:8px 22px}
+.cform .opts label{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:1rem;margin:0;color:var(--ink);cursor:pointer}
+.cform .opts input{width:auto;flex:none;margin-top:5px;padding:0;accent-color:var(--amber)}
+.cform .hint{font-size:.85rem;color:var(--stone);margin-top:8px}
+.cform-head{font-size:1.4rem;margin-top:12px;padding-top:16px;border-top:1px solid var(--line)}
+.cform-head:first-child{margin-top:0;padding-top:0;border-top:0}
