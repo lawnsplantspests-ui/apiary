@@ -140,12 +140,13 @@ footer.site h4{color:#fff;font-size:.82rem;letter-spacing:.1em;text-transform:up
    which hides the header .callbtn behind the hamburger */
 .callbar{display:none}
 @media(max-width:1120px){
-  .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;align-items:center;justify-content:center;gap:9px;
-    background:var(--bark);color:#fff !important;font-family:'Inter',system-ui,sans-serif;font-size:1rem;font-weight:700;
-    text-decoration:none;padding:15px 16px;padding-bottom:calc(15px + env(safe-area-inset-bottom,0px));
+  .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;align-items:stretch;
+    background:var(--bark);font-family:'Inter',system-ui,sans-serif;font-size:1rem;font-weight:700;
     box-shadow:0 -3px 14px rgba(0,0,0,.28);border-top:1px solid rgba(255,255,255,.18)}
-  .callbar:hover{text-decoration:none;background:var(--honey-deep)}
-  .callbar:active{background:var(--honey-deep)}
+  .callbar a{flex:1.9;display:flex;align-items:center;justify-content:center;gap:9px;color:#fff !important;text-decoration:none;
+    padding:15px 10px;padding-bottom:calc(15px + env(safe-area-inset-bottom,0px))}
+  .callbar a + a{flex:1;border-left:1px solid rgba(255,255,255,.3)}
+  .callbar a:hover,.callbar a:active{text-decoration:none;background:var(--honey-deep)}
   .callbar svg{width:19px;height:19px;flex-shrink:0}
   body{padding-bottom:calc(66px + env(safe-area-inset-bottom,0px))}
 }
