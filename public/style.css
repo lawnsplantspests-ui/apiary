@@ -10,12 +10,12 @@ h1,h2,h3,h4{font-family:'Fraunces','Georgia',serif;line-height:1.07;font-weight:
 a{color:var(--honey-deep);text-decoration:none}a:hover{text-decoration:underline}
 img{max-width:100%;height:auto;display:block}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-.eyebrow{font-size:.74rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin-bottom:14px}
+.eyebrow{font-size:.74rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--honey-deep);margin-bottom:14px}
 
 header.site{position:sticky;top:0;z-index:50;background:rgba(255,252,244,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;max-width:var(--maxw);margin:0 auto;padding:12px 24px}
 .brand{font-family:'Fraunces',serif;font-weight:600;font-size:1.2rem;color:var(--bark);line-height:1}
-.brand small{display:block;font-family:'Inter';font-weight:500;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-top:3px}
+.brand small{display:block;font-family:'Inter';font-weight:500;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--honey-deep);margin-top:3px}
 .navlinks{display:flex;gap:13px;align-items:center;font-size:.85rem;font-weight:500}
 .navlinks a{color:var(--ink)}
 .navlinks a.active{color:var(--honey-deep);font-weight:700;box-shadow:inset 0 -2px 0 var(--gold)}
@@ -98,6 +98,10 @@ ol.steps li strong{color:var(--bark);font-weight:600}
 .band .faq summary::after{color:var(--gold)}
 .band .faq p{color:#d4c8b2}
 .band .faq a{color:var(--gold)}
+/* links on the dark bands: gold, so they stand out on dark brown (some have an inline honey-deep color) */
+.band .wrap > p a:not(.btn),.band .feat a,.band .split > div > p a:not(.btn){color:var(--gold) !important;text-decoration:underline;text-underline-offset:2px}
+/* light cards sitting on a dark band keep normal card text */
+.band .card p{color:var(--stone)}
 
 .ctastrip{background:linear-gradient(100deg,var(--amber),var(--honey-deep));color:#fff;border-radius:22px;padding:46px 40px;text-align:center;margin:10px 0}
 .ctastrip h2{color:#fff;font-size:clamp(1.6rem,3.4vw,2.3rem)}
@@ -155,7 +159,7 @@ footer.site h4{color:#fff;font-size:.82rem;letter-spacing:.1em;text-transform:up
 .fc{background:var(--paper);border:1px solid var(--line);border-top:5px solid var(--line);border-radius:14px;padding:22px 22px 20px;display:flex;flex-direction:column}
 .fc.free{border-top-color:#4f8a3c}.fc.paid{border-top-color:var(--amber)}.fc.pest{border-top-color:#a33a2a}
 .fc-tag{align-self:flex-start;font-family:'Inter',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:99px;margin-bottom:12px;color:#fff}
-.fc.free .fc-tag{background:#4f8a3c}.fc.paid .fc-tag{background:var(--honey-deep)}.fc.pest .fc-tag{background:#a33a2a}
+.fc.free .fc-tag{background:#437f33}.fc.paid .fc-tag{background:var(--honey-deep)}.fc.pest .fc-tag{background:#a33a2a}
 .fc h3{font-size:1.18rem;margin-bottom:8px}
 .fc p{color:var(--stone);font-size:.95rem;flex:1}
 .fc a.more{margin-top:12px;font-weight:700;font-size:.9rem;color:var(--honey-deep)}
