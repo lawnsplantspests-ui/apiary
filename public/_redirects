@@ -7,3 +7,4 @@
 /service-areas/faq /faq 301
 /service-areas/bee-removal /bee-removal 301
 /service-areas/swarm-collection /swarm-collection 301
+/_/* / 301
